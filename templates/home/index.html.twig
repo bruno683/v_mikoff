@@ -3,18 +3,28 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'F:/symfony/v_mikoff/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'F:/symfony/v_mikoff/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <main>
+        <h1>{{ title }} </h1>
+        <div class="list">
+            {% if posts %}
+				{% for post in posts %}
+					<div class="container col-sm-6 col-lg-6">
+						<div class="row m-5">
+							<div class="card rounded m-auto shadow-lg  p-2">
+								<img src="{{asset('upload/post/' ~ post.image)}}" class="card-img-top" alt="image de la carte">
+								<div class="card-body">
+									<h3 class="card-title">{{post.title}}</h3>
+									<p class="card-text">{{post.content|u.truncate(100)}}<br><span class="text-muted">Publié le: {{post.createdAt| date("D, d M Y H:i", "Europe/Paris")}}</span></p>
+									<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				{% else %}
+					Il n'y à actuellement aucun article
+			{% endif %}
+        </div>
+    
+    </main>
 {% endblock %}

@@ -38,7 +38,18 @@ class ArticleRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
+    public function findPostPublished()
+    {
+        $q = $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->andWhere('p.isPublished = true');
+        return $q->getQuery()->getResult();
+        /*return $this->createQueryBuilder('p')
+            ->andWhere('p.isPublished = true')
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();*/
+    }
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */
