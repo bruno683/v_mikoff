@@ -1,12 +1,23 @@
 @import "~bootstrap/scss/bootstrap";
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-    nav {
-        background-color: rgb(53, 141, 60);
-        color: aliceblue;
+  nav {
+    background-color: rgb(53, 141, 60);
+    color: aliceblue;
+    #logo {
+      width: 110px;
+      height: 110px;
     }
+    #navbarSupportedContent {
+      .navbar-nav {
+        .nav-item {
+          color: aliceblue;
+        }
+      }
+    }
+  }
 }
