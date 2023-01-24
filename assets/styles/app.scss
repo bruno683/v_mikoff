@@ -4,6 +4,31 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  h1,
+  h2,
+  h3,
+  p,
+  li {
+    color: aliceblue;
+  }
+  ul{
+    list-style: none;
+    text-decoration: none;
+  }
+  button {
+    border-radius: 10px;
+    background-color: green;
+    border: none;
+    padding: 0.5rem;
+    box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
+    margin: 10px;
+    transition: all 0.4s ease-in-out;
+    color: white;
+  }
+  button:hover{
+    background-color: rgb(34, 148, 34);
+    box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
+  }
 
   nav {
     background-color: rgb(53, 141, 60);
@@ -19,5 +44,26 @@
         }
       }
     }
+  }
+  header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(255, 255, 255, 0.2)),
+                  url(./../images/Happy_women_sitting_and_talking_to_each_other.jpg);
+    // background-image: url(./../images/Happy_women_sitting_and_talking_to_each_other.jpg);
+    background-size: cover;
+    background-position: center;
+    text {
+      h1 {
+        color: aliceblue;
+      }
+      ul {
+        align-items: flex-start;
+        li{
+
+          color: aliceblue !important; 
+        }
+      }
+      
+    }
+
   }
 }
