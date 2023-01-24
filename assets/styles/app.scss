@@ -58,7 +58,7 @@
       url(./../images/mannequin.png);
     background-size: cover;
     background-position: top;
-    height: 50vh;
+    height: fit-content;
 
     text {
       align-self: center;
@@ -72,7 +72,7 @@
     }
     .name {
       color: aliceblue;
-      // font-family: "Cookie", cursive;
+      margin: 0.5rem;
       font-family: "Great Vibes", cursive;
     }
   }
