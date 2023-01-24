@@ -1,30 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}
+	{{title}}
+{% endblock %}
 
 {% block body %}
-    
-        <h1>{{ title }} </h1>
-        <div class="list">
-            {% if posts %}
-				{% for post in posts %}
-					<div class="container col-sm-6 col-lg-6">
-						<div class="row m-5">
-							<div class="card rounded m-auto shadow-lg  p-2">
-								<img src="{{asset('upload/post/' ~ post.image)}}" class="card-img-top" alt="image de la carte">
-								<div class="card-body">
-									<h3 class="card-title">{{post.title}}</h3>
-									<p class="card-text">{{post.content|u.truncate(100)}}<br><span class="text-muted">Publié le: {{post.createdAt| date("D, d M Y H:i", "Europe/Paris")}}</span></p>
-									<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
-								</div>
+	<section class="container">
+		<h1>Accueil</h1>
+		<div class="intro">
+			<h2>Mon approche thérapeutique</h2>
+			<p class="accroche">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+								Eligendi consequuntur facilis quis reiciendis odio quod esse suscipit, 
+								saepe ex nobis. Praesentium maiores reprehenderit natus quo, ullam quos 
+								distinctio odio nobis sint sapiente fugiat culpa nulla animi quasi unde 
+								maxime ipsum. Nesciunt quam similique praesentium et necessitatibus dolorem, 
+								illum explicabo quo! Officiis officia blanditiis eveniet, ullam sint...</p>
+			<a href="{{path('app_qui_suis_je')}}">
+				<button>Lire la suite</button>
+			</a>
+		</div>
+		<hr>
+		<h2 class="h2-center">Contact</h2>
+
+	</section>
+
+	<div class="list">
+		{% if posts %}
+			{% for post in posts %}
+				<div class="container col-sm-6 col-lg-6">
+					<div class="row m-5">
+						<div class="card rounded m-auto shadow-lg  p-2">
+							<img src="{{asset('upload/post/' ~ post.image)}}" class="card-img-top" alt="image de la carte">
+							<div class="card-body">
+								<h3 class="card-title">{{post.title}}</h3>
+								<p class="card-text">{{post.content|u.truncate(100)}}<br><span class="text-muted">Publié le:
+										{{post.createdAt| date("D, d M Y H:i", "Europe/Paris")}}</span>
+								</p>
+								<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
 							</div>
 						</div>
 					</div>
-				{% endfor %}
-				{% else %}
-					Il n'y à actuellement aucun article
-			{% endif %}
-        </div>
-    
-    
+				</div>
+			{% endfor %}
+		{% else %}
+			Il n'y à actuellement aucun article
+		{% endif %}
+	</div>
+
+
 {% endblock %}

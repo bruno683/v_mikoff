@@ -1,79 +1,211 @@
 @import "~bootstrap/scss/bootstrap";
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  h1,
-  h2,
-  h3,
-  p,
-  li {
-    color: aliceblue;
-    font-family: "Lato", sans-serif;
-  }
-  ul {
-    list-style: none;
-    text-decoration: none;
-  }
-  button {
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
-    background-color: green;
-    border: none;
-    padding: 0.5rem;
-    box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
-    margin: 10px;
-    transition: all 0.4s ease-in-out;
-    color: white;
-  }
-  button:hover {
-    background-color: rgb(34, 148, 34);
-    box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
-  }
-
-  nav {
-    background-color: rgb(57, 167, 143);
-    color: aliceblue;
-    #logo {
-      width: 110px;
-      height: 110px;
+@media screen and (min-width: 200px) {
+  html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    h1,
+    h2,
+    h3 {
+      color: rgb(20, 20, 20);
+      font-family: "Lato", sans-serif;
+      font-weight: bold;
     }
-    #navbarSupportedContent {
-      .navbar-nav {
-        .nav-item {
-          color: aliceblue;
-        }
-      }
+    p,
+    li {
+      color: rgb(20, 20, 20);
+      font-family: "Roboto", sans-serif;
     }
-  }
-  header {
-    display:flex;
-    align-items: center;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.95),
-        rgba(255, 255, 255, 0.2)
-      ),
-      url(./../images/mannequin.png);
-    background-size: cover;
-    background-position: top;
-    height: fit-content;
-
-    text {
-      align-self: center;
-
-      ul {
-        align-items: flex-start;
-        li {
-          color: aliceblue !important;
-        }
-      }
+    ul {
+      list-style: none;
+      text-decoration: none;
     }
-    .name {
+    button {
+      border-radius: 10px;
+      font-family: "Roboto", sans-serif;
+      background-color: rgb(57, 167, 143);
+      border: none;
+      padding: 0.5rem;
+      box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
+      margin: 10px;
+      transition: all 0.4s ease-in-out;
+      color: white;
+    }
+    button:hover {
+      background-color: rgb(53, 145, 125);
+      box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
+    }
+  
+    nav {
+      background-color: rgb(57, 167, 143);
       color: aliceblue;
-      margin: 0.5rem;
-      font-family: "Great Vibes", cursive;
+      #logo {
+        width: 110px;
+        height: 110px;
+      }
+      #navbarSupportedContent {
+        .navbar-nav {
+          .nav-item {
+            color: aliceblue;
+          }
+        }
+      }
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.95),
+          rgba(255, 255, 255, 0.2)
+        ),
+        url(./../images/mannequin.png);
+      background-size: cover;
+      background-position: top;
+      height: fit-content;
+      text {
+        align-self: center;
+      }
+      .name {
+        color: aliceblue;
+        margin: 0.5rem;
+        font-weight: normal;
+        font-family: "Great Vibes", cursive;
+      }
+      p {
+        color: aliceblue;
+      }
+    }
+  section.container {
+    h1 {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .intro {
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        text-align: left;
+      }
+      p.accroche {
+        text-align: justify;
+        padding: 0;
+        margin: 0.5rem 0 0.5rem 0;
+        width: 100%;
+      }
+      a {
+        align-self: flex-end; 
+      }
     }
   }
+  .h2-center {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 900px) {
+  html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    h1,
+    h2,
+    h3 {
+      color: rgb(20, 20, 20);
+      font-family: "Lato", sans-serif;
+      font-weight: bold;
+    }
+    p,
+    li {
+      color: rgb(20, 20, 20);
+      font-family: "Roboto", sans-serif;
+    }
+    ul {
+      list-style: none;
+      text-decoration: none;
+    }
+    button {
+      border-radius: 10px;
+      font-family: "Roboto", sans-serif;
+      background-color: rgb(57, 167, 143);
+      border: none;
+      padding: 0.5rem;
+      box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
+      margin: 10px;
+      transition: all 0.4s ease-in-out;
+      color: white;
+    }
+    button:hover {
+      background-color: rgb(53, 145, 125);
+      box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
+    }
+  
+    nav {
+      background-color: rgb(57, 167, 143);
+      color: aliceblue;
+      #logo {
+        width: 110px;
+        height: 110px;
+      }
+      #navbarSupportedContent {
+        .navbar-nav {
+          .nav-item {
+            color: aliceblue;
+          }
+        }
+      }
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.95),
+          rgba(255, 255, 255, 0.2)
+        ),
+        url(./../images/mannequin.png);
+      background-size: cover;
+      background-position: top;
+      height: fit-content;
+      text {
+        align-self: center;
+      }
+      .name {
+        color: aliceblue;
+        margin: 0.5rem;
+        font-weight: normal;
+        font-family: "Great Vibes", cursive;
+      }
+      p {
+        color: aliceblue;
+      }
+    }
+    section.container {
+      h1 {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .intro {
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+        h2 {
+          text-align: left;
+        }
+        p.accroche {
+          text-align: justify;
+          padding: 0;
+          margin: 0.5rem 0 0.5rem 0;
+          width: 30vw;
+        }
+        a {
+          align-self: flex-end; 
+        }
+      }
+    }
+    .h2-center {
+      text-align: center;
+    }
+  }
+}
 }
