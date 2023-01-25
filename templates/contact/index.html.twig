@@ -4,10 +4,15 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="contact_title">Contactez-moi</h1>
+<section class="section-form">
+    <h1 class="contact_title">Contactez-moi</h1>
     
+	<div class="form">
+        {{form(form)}}
+    </div>
+</section>
 	
-		{{form(form)}}
+		
 	
 
 {% endblock %}

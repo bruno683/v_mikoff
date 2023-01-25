@@ -102,6 +102,26 @@
   .h2-center {
     text-align: center;
   }
+  .contact_title {
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .form {
+    width: 75vw;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: rgb(188, 188, 189);
+    font-family: 'Roboto', sans-serif;
+  }
+  .section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
 @media screen and (min-width: 900px) {
   html {
@@ -206,19 +226,25 @@
     .h2-center {
       text-align: center;
     }
-    // .contact_title {
-    //   align-self: center;
-    //   margin-top: 2rem;
-    //   margin-bottom: 5rem;
-    // }
-    // .form {
-    //   width: 30vw;
-    //   margin: auto;
-    //   padding: 1.5rem;
-    //   border-radius: 10px;
-    //   background-color: rgb(188, 188, 189);
-    //   font-family: 'Roboto', sans-serif;
-    // }
+    .contact_title {
+      align-self: center;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+    }
+    .form {
+      width: 30vw;
+      margin: auto;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: rgb(188, 188, 189);
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+  .section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 }
