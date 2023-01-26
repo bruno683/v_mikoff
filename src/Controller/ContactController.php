@@ -37,9 +37,7 @@ class ContactController extends AbstractController
 
             $this->addFlash('success', 'Votre message à été envoyé avec succès !');
 
-            return $this->redirectToRoute('app_contact');
-        }else {
-            $this->addFlash('error', `Le message n'à pas été envoyé !!!!`);
+            //return $this->redirectToRoute('app_contact');
         }
 
 
