@@ -22,12 +22,13 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            $email = $data['Email'];
+            $adress = $data['Email'];
             $message = $data['message'];
             header('Access-Control-Allow-Origin: *');
             $email = (new Email())
-            ->from($email)
+            ->from($adress)
             ->to('Bruno683@outlook.fr')
+            ->replyTo($adress)
             ->subject('demande de contact')
             ->text($message);
             
