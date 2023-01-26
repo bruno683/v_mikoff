@@ -24,11 +24,11 @@ class ContactController extends AbstractController
             $data = $form->getData();
             $email = $data['Email'];
             $message = $data['message'];
-            
+            header('Access-Control-Allow-Origin: *');
             $email = (new Email())
             ->from($email)
-            ->to('70a5e9d3e8-ac006b+1@inbox.mailtrap.io')
-            ->subject('Time for Symfony Mailer!')
+            ->to('Bruno683@outlook.fr')
+            ->subject('demande de contact')
             ->text($message);
             
 
@@ -37,6 +37,8 @@ class ContactController extends AbstractController
             $this->addFlash('success', 'Votre message à été envoyé avec succès !');
 
             return $this->redirectToRoute('app_contact');
+        }else {
+            $this->addFlash('error', `Le message n'à pas été envoyé !!!!`);
         }
 
 
