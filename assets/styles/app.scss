@@ -1,128 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-@media screen and (min-width: 200px) {
-  html {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    h1,
-    h2,
-    h3 {
-      color: rgb(20, 20, 20);
-      font-family: "Lato", sans-serif;
-      font-weight: bold;
-    }
-    p,
-    li {
-      color: rgb(20, 20, 20);
-      font-family: "Roboto", sans-serif;
-    }
-    ul {
-      list-style: none;
-      text-decoration: none;
-    }
-    button {
-      border-radius: 10px;
-      font-family: "Roboto", sans-serif;
-      background-color: rgb(57, 167, 143);
-      border: none;
-      padding: 0.5rem;
-      box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
-      margin: 10px;
-      transition: all 0.4s ease-in-out;
-      color: white;
-    }
-    button:hover {
-      background-color: rgb(53, 145, 125);
-      box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
-    }
-  
-    nav {
-      background-color: rgb(57, 167, 143);
-      color: aliceblue;
-      #logo {
-        width: 110px;
-        height: 110px;
-      }
-      #navbarSupportedContent {
-        .navbar-nav {
-          .nav-item {
-            color: aliceblue;
-          }
-        }
-      }
-    }
-    header {
-      display: flex;
-      align-items: center;
-      background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.95),
-          rgba(255, 255, 255, 0.2)
-        ),
-        url(./../images/mannequin.png);
-      background-size: cover;
-      background-position: top;
-      height: fit-content;
-      text {
-        align-self: center;
-      }
-      .name {
-        color: aliceblue;
-        margin: 0.5rem;
-        font-weight: normal;
-        font-family: "Great Vibes", cursive;
-      }
-      p {
-        color: aliceblue;
-      }
-    }
-  section.container {
-    h1 {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-    .intro {
-      width: 80vw;
-      display: flex;
-      flex-direction: column;
-      h2 {
-        text-align: left;
-      }
-      p.accroche {
-        text-align: justify;
-        padding: 0;
-        margin: 0.5rem 0 0.5rem 0;
-        width: 100%;
-      }
-      a {
-        align-self: flex-end; 
-      }
-    }
-  }
-  .h2-center {
-    text-align: center;
-  }
-  .contact_title {
-    align-self: center;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-  }
-  .form {
-    width: 75vw;
-    margin: auto;
-    padding: 1.5rem;
-    border-radius: 10px;
-    background-color: rgb(188, 188, 189);
-    font-family: 'Roboto', sans-serif;
-  }
-  .section-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-}
+
 @media screen and (min-width: 900px) {
   html {
     padding: 0;
@@ -233,6 +110,8 @@
     }
     .form {
       width: 30vw;
+      display: flex;
+      flex-direction: row;
       margin: auto;
       padding: 1.5rem;
       border-radius: 10px;
@@ -246,5 +125,189 @@
     justify-content: center;
     align-items: center;
   }
+  .separator-form {
+    width: 5px;
+    height:80%;
+    // margin:0 3rem 0 3rem;
+    background-color: #1a1919;
+    border-radius: 3px;
+  }
+  .rens {
+    width: 45%;
+    height: auto;
+
+  }
+  .map {
+    margin: 3rem 0 3rem 0;
+    width: 800px;
+    iframe {
+      width: 600px;
+      height: 400px;
+    }
+  }
+}
+@media screen and (min-width: 200px) {
+  html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    h1,
+    h2,
+    h3 {
+      color: rgb(20, 20, 20);
+      font-family: "Lato", sans-serif;
+      font-weight: bold;
+    }
+    p,
+    li {
+      color: rgb(20, 20, 20);
+      font-family: "Roboto", sans-serif;
+    }
+    ul {
+      list-style: none;
+      text-decoration: none;
+    }
+    button {
+      border-radius: 10px;
+      font-family: "Roboto", sans-serif;
+      background-color: rgb(57, 167, 143);
+      border: none;
+      padding: 0.5rem;
+      box-shadow: 5px 5px 10px rgba($color: #1a1919, $alpha: 0.5);
+      margin: 10px;
+      transition: all 0.4s ease-in-out;
+      color: white;
+    }
+    button:hover {
+      background-color: rgb(53, 145, 125);
+      box-shadow: 5px 5px 10px rgba($color: #227a3c, $alpha: 0.5);
+    }
+  
+    nav {
+      background-color: rgb(57, 167, 143);
+      color: aliceblue;
+      #logo {
+        width: 110px;
+        height: 110px;
+      }
+      #navbarSupportedContent {
+        .navbar-nav {
+          .nav-item {
+            color: aliceblue;
+          }
+        }
+      }
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.95),
+          rgba(255, 255, 255, 0.2)
+        ),
+        url(./../images/mannequin.png);
+      background-size: cover;
+      background-position: top;
+      height: fit-content;
+      text {
+        align-self: center;
+      }
+      .name {
+        color: aliceblue;
+        margin: 0.5rem;
+        font-weight: normal;
+        font-family: "Great Vibes", cursive;
+      }
+      p {
+        color: aliceblue;
+      }
+    }
+  section.container {
+    h1 {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .intro {
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        text-align: left;
+      }
+      p.accroche {
+        text-align: justify;
+        padding: 0;
+        margin: 0.5rem 0 0.5rem 0;
+        width: 100%;
+      }
+      a {
+        align-self: flex-end; 
+      }
+    }
+  }
+  .h2-center {
+    text-align: center;
+  }
+  .section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .contact_title {
+      align-self: center;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+    }
+    .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 45vw;
+      margin: auto;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: rgb(188, 188, 189);
+      font-family: 'Roboto', sans-serif;
+      form {
+        margin: 0;
+        padding: 0;
+        #contact {
+          padding: 0.5rem;
+        }
+      }
+      .separator-form {
+        width: 80%;
+        height: 5px;
+        background-color: #1a1919;
+        border-radius: 3px;
+      }
+      .rens {
+        width: 45%;
+        height: auto;
+      }
+    }
+    
+    .separator-horizontal {
+      width: 80vw;
+      height: 5px;
+      margin: 3rem 0 3rem 0;
+      background-color: #1a1919;
+      border-radius: 3px;
+    }
+    
+    
+    
+  
+    .map {
+      
+      // margin: 3rem 0 3rem 0;
+      margin: auto;
+  
+      
+    }
+  }
+  
+  
 }
 }

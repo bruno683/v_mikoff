@@ -23,13 +23,17 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $adress = $data['Email'];
+            $name = $data['LastName'];
+            $subject = $data['subject'];
+            $firstName= $data['firstName'];
             $message = $data['message'];
-            header('Access-Control-Allow-Origin: *');
+            //header('Access-Control-Allow-Origin: *');
+            
             $email = (new Email())
-            ->from($adress)
+            ->from($name ." ". $firstName . " " . "<" . $adress .">")
             ->to('Bruno683@outlook.fr')
             ->replyTo($adress)
-            ->subject('demande de contact')
+            ->subject($subject)
             ->text($message);
             
 
@@ -37,7 +41,7 @@ class ContactController extends AbstractController
 
             $this->addFlash('success', 'Votre message à été envoyé avec succès !');
 
-            //return $this->redirectToRoute('app_contact');
+            return $this->redirectToRoute('app_contact');
         }
 
 
