@@ -44,6 +44,8 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('app_contact');
         }
 
+        // $faker = Faker/Factory::create();
+
 
 
         return $this->render('contact/index.html.twig', [
