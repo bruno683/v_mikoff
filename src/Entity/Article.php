@@ -128,6 +128,7 @@ class Article
         return $this;
     }
 
+
     public function getAuthor(): ?User
     {
         return $this->author;
@@ -139,4 +140,7 @@ class Article
 
         return $this;
     }
+
+
+    
 }

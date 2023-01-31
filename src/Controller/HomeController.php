@@ -6,6 +6,8 @@ use App\Entity\Article;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use App\Repository\ArticleRepository;
+use App\Repository\UserRepository;
+use Container2YJMAj4\getArticleService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,12 +17,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(ArticleRepository $articleRepo, Request $request, MailerInterface $mailer ): Response
+    /**
+     * @param ArticleRepository $articleRepo
+     * @param Request $request
+     * @param MailerInterface $mailer
+     * @return Response
+     */
+    public function index(ArticleRepository $articleRepo,UserRepository $userRepo, Request $request, MailerInterface $mailer ): Response
     {
         $title = "Vivianne Mikoff";
         $article = new Article();
+        $author = $userRepo->findByFullName('Richard Bruno');
+        
         $posts = $articleRepo->findPostPublished($article);
-
+        //dd($posts);
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
@@ -58,13 +68,20 @@ class HomeController extends AbstractController
         ]);
     }
 
+
     #[Route('/post/{id}', name: 'show_post')]
-    public function displayPost(Article $article)
+    /**
+     * @param Article $article
+     * @param ArticleRepository $articleRepo
+     * @return void
+     */
+    public function displayPost(Article $article, ArticleRepository $articleRepo)
     {
+        $author = $articleRepo->find('author');
         
         return $this->render('Home/show.html.twig', [
             'title' => $article->getTitle(),
-            'article' => $article,
+            'article' => $article
         ]);
     }
 }

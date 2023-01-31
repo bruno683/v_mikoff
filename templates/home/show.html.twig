@@ -8,6 +8,7 @@
 	<div class="container">
 		<h1>{{article.title}}</h1>
 		<p>{{article.content}}</p>
+        <p>{{ article.author.fullname }} </p>
 		<p>
 			<small>{{article.createdAt|date('d-m-Y')}}</small>
 		</p>
