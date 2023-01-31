@@ -57,4 +57,14 @@ class HomeController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/post/{id}', name: 'show_post')]
+    public function displayPost(Article $article)
+    {
+        
+        return $this->render('Home/show.html.twig', [
+            'title' => $article->getTitle(),
+            'article' => $article,
+        ]);
+    }
 }
