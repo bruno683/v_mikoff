@@ -27,10 +27,8 @@ class HomeController extends AbstractController
     {
         $title = "Vivianne Mikoff";
         $article = new Article();
-        $author = $userRepo->findByFullName('Richard Bruno');
         
         $posts = $articleRepo->findPostPublished($article);
-        //dd($posts);
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
@@ -76,9 +74,7 @@ class HomeController extends AbstractController
      * @return void
      */
     public function displayPost(Article $article, ArticleRepository $articleRepo)
-    {
-        $author = $articleRepo->find('author');
-        
+    {   
         return $this->render('Home/show.html.twig', [
             'title' => $article->getTitle(),
             'article' => $article
