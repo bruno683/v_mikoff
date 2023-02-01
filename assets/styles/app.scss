@@ -105,6 +105,7 @@
         }
       }
     }
+    
     .h2-center {
       text-align: center;
     }
@@ -153,6 +154,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+
+    }
   }
   .separator-form {
     width: 5px;
