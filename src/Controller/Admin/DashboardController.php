@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\User;
 use PhpParser\Node\Expr\New_;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,6 +46,14 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+
+
+        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::subMenu('Manage', 'fas fa-gear')->setSubItems([
+            MenuItem::linkToCrud('Liste des utitlisateurs', 'fas fa-list', User::class),
+            MenuItem::linkToCrud('Ajouter un utitlisateur', 'fas fa-plus', User::class),
+        ]);
+        
         yield MenuItem::section('Articles');
         yield MenuItem::subMenu('actions', 'fas fa-list')->setSubItems([
             MenuItem::linkToCrud('Listes des articles', 'fas fa-eye', Article::class),
