@@ -32,12 +32,14 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\ManyToOne(inversedBy: 'featured_image')]
-    private ?Media $Image = null;
+    
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
     public function getId(): ?int
     {
@@ -116,18 +118,6 @@ class Article
         return $this;
     }
 
-    public function getImage(): ?Media
-    {
-        return $this->Image;
-    }
-
-    public function setImage(?Media $Image): self
-    {
-        $this->Image = $Image;
-
-        return $this;
-    }
-
 
     public function getAuthor(): ?User
     {
@@ -140,4 +130,21 @@ class Article
 
         return $this;
     }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    
+    
+    
+    
 }

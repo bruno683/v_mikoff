@@ -24,14 +24,6 @@ class Media
     #[ORM\Column(length: 64)]
     private ?string $altText = null;
 
-    #[ORM\OneToMany(mappedBy: 'Image', targetEntity: Article::class)]
-    private Collection $featured_image;
-
-    public function __construct()
-    {
-        $this->featured_image = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -73,33 +65,4 @@ class Media
         return $this;
     }
 
-    /**
-     * @return Collection<int, Article>
-     */
-    public function getFeaturedImage(): Collection
-    {
-        return $this->featured_image;
-    }
-
-    public function addFeaturedImage(Article $featuredImage): self
-    {
-        if (!$this->featured_image->contains($featuredImage)) {
-            $this->featured_image->add($featuredImage);
-            $featuredImage->setImage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFeaturedImage(Article $featuredImage): self
-    {
-        if ($this->featured_image->removeElement($featuredImage)) {
-            // set the owning side to null (unless already changed)
-            if ($featuredImage->getImage() === $this) {
-                $featuredImage->setImage(null);
-            }
-        }
-
-        return $this;
-    }
 }

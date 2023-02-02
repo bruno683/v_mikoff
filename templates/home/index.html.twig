@@ -52,11 +52,11 @@
 				<div class="container col-sm-6 col-lg-6">
 					<div class="row m-5">
 						<div class="card rounded m-auto shadow-lg  p-2">
-							<img src="{{asset('upload/post/' ~ post.image)}}" class="card-img-top" alt="image de la carte">
+							<img src="{{asset('upload/images/articles' ~ post.image)}}" class="card-img-top" alt="image de la carte">
 							<div class="card-body">
 								<h3 class="card-title">{{post.title}}</h3>
-								<p class="card-text">{{post.content|u.truncate(100)}}<br><span class="text-muted">Publié le:
-										{{post.createdAt| date("D, d M Y H:i", "Europe/Paris")}}</span>
+								<p class="card-text">{{post.content|raw}}<br><span class="text-muted">Publié le:
+										{{post.createdAt| date("d M Y H:i", "Europe/Paris")}}</span>
 								</p>
 								<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
 							</div>
