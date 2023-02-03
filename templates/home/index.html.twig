@@ -10,25 +10,24 @@
 		<div class="intro">
 			<h2>Mon approche thérapeutique</h2>
 			<p class="accroche">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-								Eligendi consequuntur facilis quis reiciendis odio quod esse suscipit, 
-								saepe ex nobis. Praesentium maiores reprehenderit natus quo, ullam quos 
-								distinctio odio nobis sint sapiente fugiat culpa nulla animi quasi unde 
-								maxime ipsum. Nesciunt quam similique praesentium et necessitatibus dolorem, 
-								illum explicabo quo! Officiis officia blanditiis eveniet, ullam sint...</p>
+												Eligendi consequuntur facilis quis reiciendis odio quod esse suscipit, 
+												saepe ex nobis. Praesentium maiores reprehenderit natus quo, ullam quos 
+												distinctio odio nobis sint sapiente fugiat culpa nulla animi quasi unde 
+												maxime ipsum. Nesciunt quam similique praesentium et necessitatibus dolorem, 
+												illum explicabo quo! Officiis officia blanditiis eveniet, ullam sint...</p>
 			<a href="{{path('app_qui_suis_je')}}">
 				<button>Lire la suite</button>
 			</a>
 		</div>
 		<hr>
-		
+
 
 	</section>
 	<section class="section-form">
 		<h2 class="contact_title">Contact</h2>
 		<div class="form">
 			{{form(form)}}
-			<div class="separator-form">
-			</div>
+				<div class="separator-form"></div>
 				<div class="rens">
 					<div class="infos">
 						<i class="fas fa-map-marker-alt"></i>
@@ -45,28 +44,34 @@
 				</div>
 			</div>
 		</div>
+	</section>
 	
-	<div class="list">
-		{% if posts %}
-			{% for post in posts %}
-				<div class="container col-sm-6 col-lg-6">
-					<div class="row m-5">
-						<div class="card rounded m-auto shadow-lg  p-2">
-							<img src="{{asset('upload/images/articles' ~ post.image)}}" class="card-img-top" alt="image de la carte">
-							<div class="card-body">
-								<h3 class="card-title">{{post.title}}</h3>
-								<p class="card-text">{{post.content|raw}}<br><span class="text-muted">Publié le:
-										{{post.createdAt| date("d M Y H:i", "Europe/Paris")}}</span>
-								</p>
-								<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
+	<div class="container articles-list">
+		<hr>
+		<div class="list">
+			{% if posts %}
+				{% for post in posts %}
+					<div class="container m-auto mb-3 col-sm-6 col-lg-3">
+						<div class="row ">
+							<div class="card rounded p-0 shadow-lg  " style="width: 24rem;">
+
+								<img src="{{asset('/upload/images/articles/' ~ post.image)}}" class="card-img-top col-sm-6 col-md-6 col-lg-4" alt="image de la carte">
+
+								<div class="card-body">
+									<h3 class="card-title">{{post.title}}</h3>
+									<p class="card-text p-2">{{post.content|striptags|slice(0, 200) ~ '...'}}<br><span class="text-muted">Publié le:
+											{{post.createdAt| date("d M Y H:i", "Europe/Paris")}}</span>
+									</p>
+									<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			{% endfor %}
-		{% else %}
-			Il n'y à actuellement aucun article
-		{% endif %}
+				{% endfor %}
+			{% else %}
+				Il n'y à actuellement aucun article
+			{% endif %}
+		</div>
 	</div>
 
 

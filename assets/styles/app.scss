@@ -148,62 +148,73 @@
         }
       }
     }
-  }
-  .section-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .list {
+    .section-form {
       display: flex;
-      flex-flow: row wrap;
-
-    }
-  }
-  .separator-form {
-    width: 5px;
-
-    background-color: #868585;
-    border-radius: 3px;
-  }
-  .rens {
-    width: 45%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .separator-horizontal {
-    width: 80vw;
-    height: 5px;
-    margin: 3rem auto 3rem auto;
-
-    background-color: #868585;
-    border-radius: 3px;
-  }
-  .map {
-    margin: 3rem auto 3rem auto;
-    width: 800px;
-    iframe {
-      width: 100%;
-      height: 400px;
-    }
-  }
-  .article-title {
-    text-align: center;
-    margin:3rem 0 3rem 0;
-  }
-  .article-container {
-    margin: auto;
-    width: 65%;
-    text-align: justify;
-    .article-infos {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      
+    }
+    .articles-list {
+      .list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+    }
+    
+    hr {
+      margin: 3rem 0 3rem 0;
+
+    }
+    .separator-form {
+      width: 5px;
+  
+      background-color: #868585;
+      border-radius: 3px;
+    }
+    .rens {
+      width: 45%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .separator-horizontal {
+      width: 80vw;
+      height: 5px;
+      margin: 3rem auto 3rem auto;
+  
+      background-color: #868585;
+      border-radius: 3px;
+    }
+    .map {
+      margin: 3rem auto 3rem auto;
+      width: 800px;
+      iframe {
+        width: 100%;
+        height: 400px;
+      }
+    }
+    .article-title {
+      text-align: center;
+      margin:3rem 0 3rem 0;
+    }
+    .article-container {
+      margin: auto;
+      width: 65%;
+      text-align: justify;
+      .article-infos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
+  
   
 }
 @media screen and (min-width: 200px) and (max-width: 899px)
@@ -324,6 +335,14 @@
       text-align: center;
       .contact_title {
         margin: 3rem auto 3rem auto;
+      }
+    }
+    .articles-list {
+      .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
       }
     }
 
