@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use App\Repository\ArticleRepository;
+use App\Repository\QuiSuisJeRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,11 +22,15 @@ class HomeController extends AbstractController
      * @param MailerInterface $mailer
      * @return Response
      */
-    public function index(ArticleRepository $articleRepo, Request $request, MailerInterface $mailer ): Response
+    public function index(ArticleRepository $articleRepo,QuiSuisJeRepository $QuiSuisJeRepo , Request $request, MailerInterface $mailer ): Response
     {
         $title = "Vivianne Mikoff";
         $article = new Article();
+        // $post = new QuiSuisJe();
+        $lastPost = $QuiSuisJeRepo->findAll();
         
+        
+        $postOne = $lastPost[0];
         $posts = $articleRepo->findPostPublished($article);
         $form = $this->createForm(ContactType::class);
 
@@ -47,7 +52,6 @@ class HomeController extends AbstractController
             ->subject($subject)
             ->text($message);
             
-
             $mailer->send($email);
 
             $this->addFlash('success', 'Votre message à été envoyé avec succès !');
@@ -60,6 +64,7 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'title' => $title,
             'posts' =>  $posts,
+            'postOne' => $postOne,
             'form' => $form->createView()
         ]);
     }

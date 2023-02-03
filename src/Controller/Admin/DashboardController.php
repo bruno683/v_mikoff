@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\LesPatientsQueJeRecois;
 use App\Entity\QuiSuisJe;
 use App\Entity\User;
 use PhpParser\Node\Expr\New_;
@@ -13,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use PhpParser\Node\Expr\Yield_;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -59,9 +61,17 @@ class DashboardController extends AbstractDashboardController
         ]);
 
         yield MenuItem::section('Qui-suis je ?');
-        yield MenuItem::subMenu('Actions', 'fas fa-gear')->setSubItems([
-                MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', QuiSuisJe::class),
-                MenuItem::linkToCrud('Ajout de contenu', 'fas fa-plus', QuiSuisJe::class)->setAction(Crud::PAGE_NEW),
+        yield MenuItem::subMenu('Actions', 'fas fa-spark')->setSubItems([
+            MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', QuiSuisJe::class),
+            MenuItem::linkToCrud('Ajout de contenu', 'fas fa-plus', QuiSuisJe::class)->setAction(Crud::PAGE_NEW),
         ]);
+        
+        yield MenuItem::section('Les patients que je reçois');
+        yield MenuItem::subMenu('Actions', 'fas fa-gear')->setSubItems([
+            MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', LesPatientsQueJeRecois::class),
+            MenuItem::linkToCrud('Ajout de contenu', 'fas fa-plus', LesPatientsQueJeRecois::class)->setAction(Crud::PAGE_NEW),
+        ]);
+                
+                
     }
 }

@@ -16,51 +16,50 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class QuiSuisJeRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, QuiSuisJe::class);
+  public function __construct(ManagerRegistry $registry)
+  {
+    parent::__construct($registry, QuiSuisJe::class);
+  }
+
+  public function save(QuiSuisJe $entity, bool $flush = false): void
+  {
+    $this->getEntityManager()->persist($entity);
+
+    if ($flush) {
+      $this->getEntityManager()->flush();
     }
+  }
 
-    public function save(QuiSuisJe $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+  public function remove(QuiSuisJe $entity, bool $flush = false): void
+  {
+    $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    if ($flush) {
+      $this->getEntityManager()->flush();
     }
+  }
 
-    public function remove(QuiSuisJe $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+  /**
+   * @return QuiSuisJe[] Returns an array of QuiSuisJe objects
+   */
+  public function findByid($value): array
+  {
+    return $this->createQueryBuilder('q')
+      ->andWhere('q.id = :val')
+      ->setParameter('val', $value)
+      ->orderBy('q.id', 'ASC')
+      ->setMaxResults(1)
+      ->getQuery()
+      ->getResult();
+  }
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-//    /**
-//     * @return QuiSuisJe[] Returns an array of QuiSuisJe objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('q')
-//            ->andWhere('q.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('q.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?QuiSuisJe
-//    {
-//        return $this->createQueryBuilder('q')
-//            ->andWhere('q.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+  //    public function findOneById($value): ?QuiSuisJe
+  //    {
+  //        return $this->createQueryBuilder('q')
+  //            ->andWhere('q.id = :val')
+  //            ->setParameter('val', $value)
+  //            ->getQuery()
+  //            ->getOneOrNullResult()
+  //        ;
+  //    }
 }

@@ -8,8 +8,9 @@
     {% if pages %}
         {% for page in pages %}
             <h1>{{page.title}}</h1>
-            <p>{{page.content}}</p>
-            <img src="upload/images/pages/ ~ page.image" alt="image de l'article">
+            <p>{{page.content|raw}}</p>
+            
+            <img src="{{asset('/upload/images/pages/' ~ page.image)}}" class="illustration"alt="image de l'article">
             <hr>
             
         {% endfor %}

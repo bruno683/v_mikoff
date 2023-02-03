@@ -32,7 +32,7 @@ class ArticleCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-        $user = $this->getUser();
+        
         
         return [
             IdField::new('id')->hideOnIndex()->hideOnForm(),
@@ -57,7 +57,6 @@ class ArticleCrudController extends AbstractCrudController
 
         parent::persistEntity($entityManager, $entityInstance);
 
-        // $entityManager->persist($entityInstance)->flush();
     }
     
 }
