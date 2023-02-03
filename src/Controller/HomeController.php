@@ -6,8 +6,6 @@ use App\Entity\Article;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use App\Repository\ArticleRepository;
-use App\Repository\UserRepository;
-use Container2YJMAj4\getArticleService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +21,7 @@ class HomeController extends AbstractController
      * @param MailerInterface $mailer
      * @return Response
      */
-    public function index(ArticleRepository $articleRepo,UserRepository $userRepo, Request $request, MailerInterface $mailer ): Response
+    public function index(ArticleRepository $articleRepo, Request $request, MailerInterface $mailer ): Response
     {
         $title = "Vivianne Mikoff";
         $article = new Article();
