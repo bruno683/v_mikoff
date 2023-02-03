@@ -164,7 +164,12 @@
         align-items: flex-start;
       }
     }
-    
+    .container {
+      h1 {
+        text-align: center;
+        margin: 3rem 0 3rem 0;
+      }
+    }
     hr {
       margin: 3rem 0 3rem 0;
 
@@ -345,7 +350,12 @@
         align-items: flex-start;
       }
     }
-
+    .container {
+      h1 {
+        text-align: center;
+        margin: 3rem 0 3rem 0;
+      }
+    }
     .separator-horizontal {
       width: 80vw;
       height: 5px;

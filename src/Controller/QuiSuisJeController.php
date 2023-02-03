@@ -15,9 +15,9 @@ class QuiSuisJeController extends AbstractController
     {
         $article = new QuiSuisJe();
 
-        $page = $QuiSuisJeRepo->findAll($article);
+        $pages = $QuiSuisJeRepo->findAll($article);
         return $this->render('qui_suis_je/index.html.twig', [
-            'page' => $page,
+            'pages' => $pages,
         ]);
     }
 }
