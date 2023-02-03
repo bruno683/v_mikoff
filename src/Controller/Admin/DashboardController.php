@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\QuiSuisJe;
 use App\Entity\User;
 use PhpParser\Node\Expr\New_;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
-    
 
-
-    
     public function __construct(private AdminUrlGenerator $adminUrlGenerator)
         {
             
@@ -51,13 +49,19 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Utilisateurs');
         yield MenuItem::subMenu('Manage', 'fas fa-gear')->setSubItems([
             MenuItem::linkToCrud('Liste des utitlisateurs', 'fas fa-list', User::class),
-            MenuItem::linkToCrud('Ajouter un utitlisateur', 'fas fa-plus', User::class),
+            MenuItem::linkToCrud('Ajouter un utitlisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
         ]);
         
         yield MenuItem::section('Articles');
         yield MenuItem::subMenu('actions', 'fas fa-list')->setSubItems([
-            MenuItem::linkToCrud('Listes des articles', 'fas fa-eye', Article::class),
+            MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', Article::class),
             MenuItem::linkToCrud('Ajouter un article', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
+        ]);
+
+        yield MenuItem::section('Qui-suis je ?');
+        yield MenuItem::subMenu('Actions', 'fas fa-gear')->setSubItems([
+                MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', QuiSuisJe::class),
+                MenuItem::linkToCrud('Ajout de contenu', 'fas fa-plus', QuiSuisJe::class)->setAction(Crud::PAGE_NEW),
         ]);
     }
 }
