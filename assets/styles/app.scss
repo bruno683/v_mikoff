@@ -40,6 +40,7 @@
     nav {
       background-color: rgb(57, 167, 143);
       color: aliceblue;
+      animation: nav-load 400ms ease-in;
       #logo {
         width: 80px;
         height: 80px;
@@ -229,6 +230,14 @@
         justify-content: space-between;
         align-items: center;
       }
+    }
+  }
+  @keyframes nav-load {
+    0% {
+      transform: translateY(-100%) ;
+    }
+    100%{
+      transform: translateY(0);
     }
   }
 }
