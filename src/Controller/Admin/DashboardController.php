@@ -61,7 +61,7 @@ class DashboardController extends AbstractDashboardController
         ]);
 
         yield MenuItem::section('Qui-suis je ?');
-        yield MenuItem::subMenu('Actions', 'fas fa-spark')->setSubItems([
+        yield MenuItem::subMenu('Actions', 'fas fa-gear')->setSubItems([
             MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', QuiSuisJe::class),
             MenuItem::linkToCrud('Ajout de contenu', 'fas fa-plus', QuiSuisJe::class)->setAction(Crud::PAGE_NEW),
         ]);
