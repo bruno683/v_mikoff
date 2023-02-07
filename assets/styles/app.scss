@@ -57,15 +57,11 @@
       display: flex;
       align-items: center;
       margin-top: 125px;
-      background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.95),
-          rgba(255, 255, 255, 0.2)
-        ),
+      background-image: 
         url(./../images/mannequin.png);
       background-size: cover;
       background-position: center;
-      height: fit-content;
+      height: 50vh;
       text {
         align-self: center;
       }
@@ -98,6 +94,7 @@
           justify-content: center;
           align-items: center;
           width: 45%;
+          animation: card-load 1500ms ease-in;
           h2 {
             text-align: left;
           }
@@ -117,6 +114,7 @@
         }
         .content-image {
           width: 45%;
+          animation: img-load 2000ms ease-in;
         }
       }
     }
@@ -128,6 +126,7 @@
       align-self: center;
       margin-top: 2rem;
       margin-bottom: 5rem;
+      animation: card-load 1500ms ease-in;
     }
     .form {
       width: 55vw;
@@ -168,6 +167,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: card-load 1500ms ease-in;
     }
 
     .list {
@@ -176,6 +176,9 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: flex-start;
+      .container {
+        animation: card-load 900ms ease-in ;
+      }
     }
 
     .container {
@@ -232,14 +235,35 @@
       }
     }
   }
-  @keyframes nav-load {
-    0% {
-      transform: translateY(-100%) ;
-    }
-    100%{
-      transform: translateY(0);
-    }
-  }
+  // @keyframes nav-load {
+  //   0% {
+  //     transform: translateY(-100%) ;
+  //   }
+  //   100%{
+  //     transform: translateY(0);
+  //   }
+  // }
+  // @keyframes card-load {
+  //   0% {
+  //     transform: scale(0);
+  //   }
+
+
+  //   90% {
+  //     transform: scale(1.1);
+  //   }
+  //   100% {
+  //     transform: scale(1);
+  //   }
+  // }
+  // @keyframes img-load {
+  //   0% {
+  //     transform: translateX(100%);
+  //   }
+  //   100%{
+  //     transform: translateX(0);
+  //   }
+  // }
 }
 @media screen and (min-width: 200px) and (max-width: 899px) {
   html {
