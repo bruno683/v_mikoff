@@ -12,7 +12,7 @@ const $ = require('jquery');
 require('bootstrap');
 
 
-const faders = document.querySelectorAll(".fade-out");
+
 // or you can include specific pieces
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');

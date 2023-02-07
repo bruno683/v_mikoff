@@ -177,9 +177,18 @@
       justify-content: space-evenly;
       align-items: flex-start;
       .container {
-        animation: card-load 900ms ease-in ;
+        .card {
+          transform: translateX(-400%);
+
+        }
+        .card.show {
+          transform: translateX(0);
+        }
       }
+
     }
+
+
 
     .container {
       h1 {
