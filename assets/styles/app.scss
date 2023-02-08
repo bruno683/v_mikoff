@@ -115,7 +115,6 @@
         }
       }
     }
-    
 
     .h2-center {
       text-align: center;
@@ -136,7 +135,7 @@
       border-radius: 10px;
       box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.65);
       font-family: "Roboto", sans-serif;
-      background-color: rgb(236, 236, 236);
+      background-color: #5FC2BA;
       font-family: "Roboto", sans-serif;
     }
     form {
@@ -147,6 +146,7 @@
         padding: 0.5rem;
         .form-control {
           font-size: smaller;
+          color: #ffffff;
           border: 0;
           border-bottom: 2px solid rgb(145, 143, 143);
           outline: 0;
@@ -173,7 +173,6 @@
     .section-form.show {
       transform: translateX(0);
       transform: scale(1);
-      
     }
 
     .list {
@@ -245,6 +244,83 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+      }
+    }
+    footer {
+      background-color: #1c2942;
+      color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      font-family: 'roboto', sans-serif;
+      box-shadow: 0 -10px 15px #0b162c8c;
+      a {
+        outline: none;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .footer-developpeur {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .footer-mentions {
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        a {
+          padding: 0.3rem;
+        }
+      }
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0.6rem;
+        .footer-adress {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            color: #5FC2BA;
+            margin-right: 0.3rem;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
+        .footer-phone {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            margin-right: 0.3rem;
+            color: #5FC2BA;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
+        .footer-mail {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            margin-right: 0.3rem;
+            color: #5FC2BA;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
       }
     }
   }
@@ -522,6 +598,87 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+      }
+    }
+    footer {
+      background-color: #1c2942;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      font-family: 'roboto', sans-serif;
+      box-shadow: 0 -10px 15px #0b162c8c;
+      a {
+        outline: none;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .footer-developpeur {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0.8rem;
+
+      }
+      .footer-mentions {
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0.8rem;
+
+        a {
+          padding: 0.3rem;
+        }
+      }
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0.8rem;
+        .footer-adress {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            color: #5FC2BA;
+            margin-right: 0.3rem;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
+        .footer-phone {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            margin-right: 0.3rem;
+            color: #5FC2BA;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
+        .footer-mail {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          i {
+            margin-right: 0.3rem;
+            color: #5FC2BA;
+          }
+          p {
+            padding: 0.3rem;
+            color: #ffffff;
+          }
+        }
       }
     }
   }
