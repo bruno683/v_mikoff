@@ -331,6 +331,15 @@
         }
       }
     }
+    .form-container {
+      margin: 3rem auto 3rem auto;
+      padding: 1.3rem;
+      width: 45%;
+      background-color: #def3f1;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.95);
+      
+    }
   }
   // @keyframes nav-load {
   //   0% {
@@ -703,6 +712,14 @@
           }
         }
       }
+    }
+    .form-container {
+      margin: 3rem auto 3rem auto;
+      padding: 1.3rem;
+      background-color: #def3f1;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.95);
+      
     }
   }
 }
