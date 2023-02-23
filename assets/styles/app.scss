@@ -21,6 +21,10 @@
       list-style: none;
       text-decoration: none;
     }
+    ul.politics {
+      list-style: circle;
+      text-decoration: dashed;
+    }
     button {
       border-radius: 10px;
       font-family: "Roboto", sans-serif;
@@ -390,6 +394,10 @@
     ul {
       list-style: none;
       text-decoration: none;
+    }
+    ul.politics {
+      list-style: circle;
+      text-decoration: dashed;
     }
     button {
       border-radius: 10px;

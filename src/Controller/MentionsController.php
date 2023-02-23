@@ -14,10 +14,16 @@ class MentionsController extends AbstractController
         $editorName = 'coddadict';
         $editorAdress = '47 rue compère 47550 Boe, France';
         $immatNumber = '88046991100015';
-        $siteName = 'thérapeute';
+        $siteName = 'www.therapeute-mikoff.fr';
         $hostName = 'Hostinger.com';
+        $contactMail = 'contact@codaddict.fr';
         return $this->render('mentions/index.html.twig', [
-            
+            'editor_name' => $editorName,
+            'editor_adress' => $editorAdress,
+            'immat_number' => $immatNumber,
+            'site_name' => $siteName,
+            'host_name' => $hostName,
+            'contact_mail' => $contactMail
         ]);
     }
 }

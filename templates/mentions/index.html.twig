@@ -1,7 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mentions Légales{% endblock %}
-
-{% block body %}
-
+{% block title %}Mentions Légales
 {% endblock %}
+{% block body %}
+    <div class="container">
+	<h1>Mentions légales</h1>
+	<p>
+		Le site web {{site_name}} est édité par
+		{{editor_name}}, domicilié(e)
+		{{editor_adress}} et immatriculé(e) sous le numéro
+		{{immat_number}}  </p>
+        <h3>Responsabilité :</h3>
+		<p>
+            Le contenu du site web
+		{{site_name}}
+		est fourni à titre informatif et ne saurait engager la responsabilité de
+		{{editor_name}}. L'utilisateur est seul responsable de l'utilisation qu'il fait des informations fournies sur le site.
+        </p>
+		<h3>Propriété intellectuelle :</h3>
+		<p>
+            Le site web
+		{{site_name}}
+		et son contenu sont protégés par la législation française sur la propriété intellectuelle et par les conventions internationales. Toute reproduction ou représentation totale ou partielle, par quelque procédé que ce soit, du site ou de son contenu, sans l'autorisation préalable et écrite de
+		{{editor_name}}, est strictement interdite et constituerait une contrefaçon.
+        </p>
+		<h3>Données personnelles :</h3>
+		<p>
+            Les données personnelles collectées sur le site web
+		{{site_name}}
+		sont traitées conformément à la réglementation en vigueur. Pour plus d'informations sur notre politique de confidentialité, vous pouvez consulter la page <a href="{{path('app_politiques')}}">de politique de confidentialité.</a>  
+        </p>
+		
+        <h3>
+            Hébergement : 
+        </h3>
+		<p>
+            Le site web {{site_name}} est hébergé par {{host_name}}, domicilié(e) à 
+		Kaunas, Lithuanie.
+        </p>
+		<h3>Contact :</h3>
+		<p>
+            Pour toute question ou demande de renseignements concernant le site web [nom du site web], vous pouvez nous contacter à l'adresse
+		{{contact_mail}}.
+        </p>
+		<h3>Droit applicable :</h3>
+		<p>
+            Les présentes mentions légales sont soumises au droit français. Tout litige relatif à l'utilisation du site web
+		{{site_name}}
+		sera de la compétence exclusive des tribunaux français.
+        </p>
+		
+
+	
+</div>
+{% endblock %}
+
