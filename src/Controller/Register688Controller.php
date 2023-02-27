@@ -34,6 +34,7 @@ class Register688Controller extends AbstractController
 
             $em->persist($user);
             $em->flush();
+            return $this->redirectToRoute('app_home');
         }
         
         return $this->render('register688/index.html.twig', [
