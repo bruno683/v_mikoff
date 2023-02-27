@@ -118,6 +118,7 @@
           animation: img-load 2000ms ease-in;
         }
       }
+      
     }
 
     .h2-center {
@@ -236,6 +237,14 @@
           justify-content: space-between;
           align-items: center;
         }
+      }
+      form #register {
+        background-color: #97d9e2;
+        margin: 3rem auto 6rem auto;
+        padding: 3rem;
+        width: 45%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.65);
       }
       
     }
@@ -560,6 +569,14 @@
           justify-content: space-between;
           align-items: center;
         }
+      }
+      form #register {
+        background-color: #97d9e2;
+        margin: 3rem auto 6rem auto;
+        padding: 3rem;
+        width: 85%;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.65);
       }
     }
     .separator-horizontal {
