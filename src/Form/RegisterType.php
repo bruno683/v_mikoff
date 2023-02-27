@@ -37,7 +37,7 @@ class RegisterType extends AbstractType
                 ],
             ])
             ->add('fullname', TextType::class, [
-                'label' => 'Nom et Prénom',
+                'label' => 'Prénom et Nom',
             ])
             ->add('envoyer', SubmitType::class)
         ;
