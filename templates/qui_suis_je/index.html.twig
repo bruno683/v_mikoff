@@ -7,12 +7,17 @@
     <h1>Qui-suis je ?</h1>
     {% if pages %}
         {% for page in pages %}
-            <h1>{{page.title}}</h1>
-            <p>{{page.content|raw}}</p>
-            
+        <div class="page-container">
+
+            <div class="text-block">
+                <h1>{{page.title}}</h1>
+                <p>{{page.content|raw}}</p>
+            </div>
             <img src="{{asset('/upload/images/pages/' ~ page.image)}}" class="illustration"alt="image de l'article">
-            <hr>
             
+            
+        </div>
+        <hr>
         {% endfor %}
         {% else %}
                 <h1>pas de présentations disponibles</h1>

@@ -210,6 +210,19 @@
         text-align: center;
         margin: 3rem 0 3rem 0;
       }
+      .page-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .text-block {
+          display: flex;
+          flex-direction: column;
+        }
+        .illustration {
+          width: 40%;
+        }
+      }
+      
     }
     hr {
       margin: 3rem 0 3rem 0;
@@ -546,8 +559,18 @@
       p {
         text-align: justify;
       }
-      .illustration {
-        width: 350px;
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .text-block {
+          display: flex;
+          flex-direction: column;
+        }
+        .illustration {
+          width: 80%;
+        }
       }
     }
     .separator-horizontal {
