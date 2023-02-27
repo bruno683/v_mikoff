@@ -4,18 +4,12 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegisterType;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Bundle\SecurityBundle\Security\UserAuthenticator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\Transport\Smtp\Auth\LoginAuthenticator;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
-use Symfony\Component\Security\Http\Authenticator\FormLoginAuthenticator;
 
 class Register688Controller extends AbstractController
 {
@@ -40,13 +34,7 @@ class Register688Controller extends AbstractController
 
             $em->persist($user);
             $em->flush();
-
-            
         }
-
-
-
-
         
         return $this->render('register688/index.html.twig', [
             'registrationForm' => $form->createView(),
