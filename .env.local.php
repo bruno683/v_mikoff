@@ -6,7 +6,7 @@ return array (
   'APP_ENV' => 'prod',
   'APP_SECRET' => '41d8f0178c80ce39f5ce413a6d42c900',
   'MESSENGER_TRANSPORT_DSN' => 'doctrine://default?auto_setup=0',
-  'DATABASE_URL' => 'mysql://u853211615_mikoff:85BxZ!OHs@127.0.0.1:3306/u853211615_viviane?&charset=utf8',
+  'DATABASE_URL' => 'mysql://u853211615_G3WCl:85BxZOHs@127.0.0.1:3306/u853211615_1JKv8?&charset=utf8',
   'MAIL_ENCRYPTION' => 'tsl',
   'MAILER_DSN' => 'smtp://contact@therapeute-mikoff.fr:xyVb47!6BD@smtp.hostinger.com:465',
 );
