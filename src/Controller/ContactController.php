@@ -30,7 +30,7 @@ class ContactController extends AbstractController
             //header('Access-Control-Allow-Origin: *');
             
             $email = (new Email())
-            ->from($name ." ". $firstName . " " . "<" . $adress .">")
+            ->from($adress)
             ->to('contact@therapeute-mikoff.fr')
             ->replyTo($adress)
             ->subject($subject)

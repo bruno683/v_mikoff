@@ -13,5 +13,6 @@ return array (
   'MAIL_USERNAME' => 'contact@therapeute-mikoff.fr',
   'MAIL_PASSWORD' => 'xyVb47!6BD',
   'MAIL_ENCRIPTION' => 'tls',
-  'MAILER_DSN' => 'smtp://contact@therapeute-mikoff.fr:xyVb47!6BD@smtp.hostinger.com@465',
+  'MAILER_DSN' => 'smtp://contact@therapeute-mikoff.fr:xyVb47!6BD@smtp.hostinger.com:465',
 );
+
