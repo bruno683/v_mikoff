@@ -28,12 +28,9 @@ class HomeController extends AbstractController
         $article = new Article();
         // $post = new QuiSuisJe();
         $lastPost = $QuiSuisJeRepo->findAll();
-        $postOne = [];
-        if ($lastPost) {
-            $postOne = $lastPost[0];
-        }else {
-            $postOne= [];
-        }
+
+        $postOne = $lastPost[0];
+    
         
         
         $posts = $articleRepo->findPostPublished($article);
@@ -52,7 +49,7 @@ class HomeController extends AbstractController
             
             $email = (new Email())
             ->from($name ." ". $firstName . " " . "<" . $adress .">")
-            ->to('Bruno683@outlook.fr')
+            ->to('contact@therapeute-mikoff.fr')
             ->replyTo($adress)
             ->subject($subject)
             ->text($message);
