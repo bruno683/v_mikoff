@@ -31,7 +31,7 @@ class ContactController extends AbstractController
             
             $email = (new Email())
             ->from($name ." ". $firstName . " " . "<" . $adress .">")
-            ->to('Bruno683@outlook.fr')
+            ->to('contact@therapeute-mikoff.fr')
             ->replyTo($adress)
             ->subject($subject)
             ->text($message);
@@ -39,7 +39,7 @@ class ContactController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('success', 'Votre message à été envoyé avec succès !');
+            // $this->addFlash('success', 'Votre message à été envoyé avec succès !');
 
             return $this->redirectToRoute('app_contact');
         }

@@ -28,9 +28,14 @@ class HomeController extends AbstractController
         $article = new Article();
         // $post = new QuiSuisJe();
         $lastPost = $QuiSuisJeRepo->findAll();
+        $postOne = [];
+        if ($lastPost) {
+            $postOne = $lastPost[0];
+        }else {
+            $postOne= [];
+        }
         
         
-        $postOne = $lastPost[0];
         $posts = $articleRepo->findPostPublished($article);
         $form = $this->createForm(ContactType::class);
 

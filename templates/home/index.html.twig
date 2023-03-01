@@ -7,16 +7,21 @@
 {% block body %}
 	<section class="container">
 		<h1>Accueil</h1>
-		<div class="intro">
+		{% if postOne %}
+			<div class="intro">
 			
-			<div class="content">
-				<h2>{{postOne.title}}</h2>
-				<p class="accroche">{{postOne.content|striptags|slice(0, 200) ~ '...'}}</p>
-				<a href="{{path('app_qui_suis_je')}}"><button>Lire la suite</button></a>
+				<div class="content">
+					<h2>{{postOne.title}}</h2>
+					<p class="accroche">{{postOne.content|striptags|slice(0, 200) ~ '...'}}</p>
+					<a href="{{path('app_qui_suis_je')}}"><button>Lire la suite</button></a>
+				</div>
+				<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
 			</div>
-			<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
-		</div>
-		<hr>
+			<hr>
+		{% else %}
+			<h3>Présentation en construction</h3>
+		{% endif %}
+		
 
 
 	</section>
