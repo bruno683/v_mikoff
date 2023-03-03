@@ -6,10 +6,11 @@ namespace App\Controller;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 
 class ContactController extends AbstractController
 {
@@ -30,16 +31,21 @@ class ContactController extends AbstractController
             //header('Access-Control-Allow-Origin: *');
             
             $email = (new Email())
-            ->from($adress)
+            ->from($name ." ". $firstName. '<contact@therapeute-mikoff.fr>')
             ->to('contact@therapeute-mikoff.fr')
             ->replyTo($adress)
             ->subject($subject)
             ->text($message);
             
 
-            $mailer->send($email);
+            try {
+                $mailer->send($email);
+            } catch (TransportExceptionInterface $e) {
+                //throw $th;
+            }
+            
 
-            // $this->addFlash('success', 'Votre message à été envoyé avec succès !');
+            $this->addFlash('notice', 'Votre message à été envoyé avec succès !');
 
             return $this->redirectToRoute('app_contact');
         }
