@@ -7,21 +7,24 @@
 {% block body %}
 	<section class="container">
 		<h1>Accueil</h1>
-		{% if postOne %}
-			<div class="intro">
-			
-				<div class="content">
+
+		<div class="intro">
+
+			<div class="content">
+				{% if postOne %}
 					<h2>{{postOne.title}}</h2>
 					<p class="accroche">{{postOne.content|striptags|slice(0, 200) ~ '...'}}</p>
-					<a href="{{path('app_qui_suis_je')}}"><button>Lire la suite</button></a>
-				</div>
+					<a href="{{path('app_qui_suis_je')}}">
+						<button>Lire la suite</button>
+					</a>
+				
 				<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
+				{% else %}
+					<h3>Présentation en construction</h3>
+				{% endif %}
 			</div>
-			<hr>
-		{% else %}
-			<h3>Présentation en construction</h3>
-		{% endif %}
-		
+		</div>
+		<hr>
 
 
 	</section>
@@ -55,7 +58,7 @@
 			{% for post in posts %}
 				<div class="container mb-3 col-sm-6 col-lg-4">
 					<div class="row ">
-						<div class="card rounded p-0 shadow-lg"  style="width: 24rem;">
+						<div class="card rounded p-0 shadow-lg" style="width: 24rem;">
 
 							<img src="{{asset('/upload/images/articles/' ~ post.image)}}" class="card-img-top col-sm-6 col-md-6 col-lg-4" alt="image de la carte">
 
