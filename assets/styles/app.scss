@@ -112,11 +112,12 @@
               margin: 0;
             }
           }
+          .content-image {
+            width: 60%;
+            // animation: img-load 3ms ease-in;
+          }
         }
-        .content-image {
-          width: 45%;
-          animation: img-load 2000ms ease-in;
-        }
+        
       }
       
     }
@@ -213,7 +214,7 @@
       }
       .page-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         .text-block {
           display: flex;
@@ -229,8 +230,13 @@
       }
       .article-container {
         margin: 3rem auto 6rem auto ;
-        width: 65%;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
         text-align: justify;
+        img {
+          width: 40%;
+        }
         .article-infos {
           display: flex;
           flex-direction: row;
@@ -461,27 +467,39 @@
         display: flex;
         margin: auto;
         flex-direction: column;
-        transform: translateX(-600%);
-        transform: scale(0.2);
-        transition: all 0.5s ease;
-        h2 {
-          text-align: left;
-        }
-        p.accroche {
-          text-align: justify;
-        }
-        a {
-          align-self: flex-end;
-          margin: 1.3rem 0 1.3rem 0;
-          button {
-            margin: 0;
+        
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          h2 {
+            text-align: left;
+          }
+          p.accroche {
+            text-align: justify;
+          }
+          a {
+            align-self: flex-end;
+            margin: 1.3rem 0 1.3rem 0;
+            button {
+              margin: 0;
+            }
+          }
+          img {
+            width: 80%;
+            // animation: img-load 3ms ease-in;
           }
         }
+        
+        
       }
-      .intro.show {
-        transform: translateX(0);
-        transform: scale(1);
-      }
+      // intro.show {
+      //  transform: translateX(0);
+      //  transform: scale(1);
+      //  
+      // }
       .separator-form {
         width: 80%;
         height: 5px;
@@ -559,10 +577,15 @@
         margin: 3rem 0 3rem 0;
       }
       .article-container {
-        margin: auto 3rem auto 3rem;
+        margin: 3rem auto 3rem auto ;
+        display: flex;
+        flex-direction: column;
         margin-bottom: 3rem;
-        width: 90%;
+        width: 80%;
         text-align: justify;
+        img {
+          width: 100%;
+        }
         .article-infos {
           display: flex;
           flex-direction: row;
