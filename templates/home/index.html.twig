@@ -11,16 +11,15 @@
 		<div class="intro">
 
 			<div class="content">
-				{% if postOne %}
+				{% if postOne is not null %}
 					<h2>{{postOne.title}}</h2>
 					<p class="accroche">{{postOne.content|striptags|slice(0, 200) ~ '...'}}</p>
 					<a href="{{path('app_qui_suis_je')}}">
 						<button>Lire la suite</button>
 					</a>
-				
-				<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
+					<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
 				{% else %}
-					<h3>Présentation en construction</h3>
+					Présentation en construction
 				{% endif %}
 			</div>
 		</div>

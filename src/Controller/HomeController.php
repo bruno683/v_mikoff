@@ -26,10 +26,15 @@ class HomeController extends AbstractController
     {
         $title = "Vivianne Mikoff";
         $article = new Article();
-        // $post = new QuiSuisJe();
+        
         $lastPost = $QuiSuisJeRepo->findAll();
-
-        $postOne = $lastPost[0];
+        $postOne = [];
+        if ($lastPost) {
+            $postOne = $lastPost[0];
+        }else {
+            $postOne = null;
+        }
+        
     
         
         
