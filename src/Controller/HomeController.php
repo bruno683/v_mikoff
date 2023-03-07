@@ -77,17 +77,17 @@ class HomeController extends AbstractController
     }
 
 
-    #[Route('/post/{id}', name: 'show_post')]
+    #[Route('/post/{slug}', name: 'show_post', methods: ['GET'])]
     /**
-     * @param Article $article
+     * @param Article $post
      * @param ArticleRepository $articleRepo
      * @return void
      */
-    public function displayPost(Article $article, ArticleRepository $articleRepo)
+    public function displayPost(Article $post, ArticleRepository $articleRepo)
     {   
-        return $this->render('Home/show.html.twig', [
-            'title' => $article->getTitle(),
-            'article' => $article
+        
+        return $this->render('home/show.html.twig', [
+            'article' => $post,
         ]);
     }
 }
