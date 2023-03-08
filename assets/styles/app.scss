@@ -152,13 +152,12 @@
         padding: 0.5rem;
         .form-control {
           font-size: smaller;
-          color: #ffffff;
           border: 0;
           border-bottom: 2px solid rgb(145, 143, 143);
           outline: 0;
           background: transparent;
           border-radius: 0;
-          transition: border-color 0.2s;
+          // transition: border-color 0.2s;
           font-size: 1.3rem;
           .btn-primary {
             background-color: #227a3c;
@@ -171,14 +170,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transform: translateX(600%);
-      transform: scale(0.6);
-      transition: all 0.8s ease-in-out;
+      // transform: translateX(600%);
+      // transform: scale(0.6);
+      // transition: all 0.8s ease-in-out;
     }
-    .section-form.show {
-      transform: translateX(0);
-      transform: scale(1);
-    }
+    // .section-form.show {
+      // transform: translateX(0);
+      // transform: scale(1);
+    // }
     .image-deco {
       background-image: url(./../images/seance-psychologue-bureau-parler-problemes.jpg);
       width: 100%;
@@ -513,15 +512,15 @@
     }
     .section-form {
       text-align: center;
-      transform: translateX(-600%);
-      transition: all 0.8s ease-in-out;
+      // transform: translateX(-600%);
+      // transition: all 0.8s ease-in-out;
       .contact_title {
         margin: 3rem auto 3rem auto;
       }
     }
-    .section-form.show {
-      transform: translateX(0);
-    }
+    // .section-form.show {
+      // transform: translateX(0);
+    // }
     .image-deco {
       background-image: url(./../images/seance-psychologue-bureau-parler-problemes.jpg);
       width: 100%;
