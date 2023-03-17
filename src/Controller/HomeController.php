@@ -77,7 +77,7 @@ class HomeController extends AbstractController
     }
 
 
-    #[Route('/post/{slug}', name: 'show_post', methods: ['GET'])]
+    #[Route('/post/{id}', name: 'show_post', methods: ['GET'])]
     /**
      * @param Article $post
      * @param ArticleRepository $articleRepo
