@@ -62,7 +62,7 @@
       align-items: center;
       margin-top: 125px;
       background-image: url(./../images/mannequin.png);
-      background-size: cover;
+      background-size: 1420px 350px;
       background-position: center;
       height: 50vh;
       text {
@@ -215,14 +215,16 @@
       }
       .page-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         .text-block {
           display: flex;
           flex-direction: column;
         }
         .illustration {
-          width: 40%;
+          width: 500px;
+          height: 350px;
         }
       }
       .article-title {
