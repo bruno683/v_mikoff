@@ -8,16 +8,21 @@
 	<div class="container">
 		<h1 class="article-title">{{article.title}}</h1>
 		<div class="article-container">
-			<p class="article-content">{{article.content|raw}}</p>
-			<p class="article-author">{{ article.author.fullname }}
-			</p>
-            <img src="{{asset('/upload/images/articles/' ~ article.image)}}" class="illustration" alt="image de l'article">
+			<div class="image-flottantes">
+				<img src="{{asset('/upload/images/articles/' ~ article.image)}}" class="illustration" alt="image de l'article">
+				<p class="article-content">{{article.content|raw}}</p>
+			</div>
+
+			<p class="article-author">{{ article.author.fullname }}</p>
+
 			<div class="article-infos">
 				<p>
 					<small>Publié le:
 						{{article.createdAt|date('d-m-Y')}}</small>
 				</p>
-                <a href="{{path('app_home') }} "><button>Retour à l'accueil</button></a>
+				<a href="{{path('app_home') }} ">
+					<button>Retour à l'accueil</button>
+				</a>
 			</div>
 		</div>
 	</div>

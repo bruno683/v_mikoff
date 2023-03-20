@@ -11,50 +11,22 @@
 		<div class="intro">
 			{% if postOne is not null %}
 				<div class="content">
-
 						<h2>{{postOne.title}}</h2>
 						<p class="accroche">{{postOne.content|striptags|slice(0, 200) ~ '...'}}</p>
 						<a href="{{path('app_qui_suis_je')}}">
 							<button>Lire la suite</button>
 						</a>
-						
-
 				</div>
 			{% else %}
 				Présentation en construction
 			{% endif %}
-			<img src="{{asset('/upload/images/articles/'~ postOne.image)}}" class="content-image" alt="">
+			<img src="{{asset('/upload/images/pages/'~ postOne.image)}}" class="content-image" alt="">
 		</div>
 
 		<hr>
 
 
 	</section>
-	<section class="section-form ">
-		<h2 class="contact_title">Contact</h2>
-		<div class="form ">
-			{{form(form)}}
-				<div class="separator-form"></div>
-				<div class="rens">
-					<div class="infos">
-						<i class="fas fa-map-marker-alt"></i>
-						<p>108 blvrd Carnot 47000 Agen</p>
-					</div>
-					<div class="infos">
-						<i class="fas fa-phone-alt"></i>
-						<p>06 47 85 74 74</p>
-					</div>
-					<div class="infos">
-						<i class="fas fa-paper-plane"></i>
-						<p>contact@therapeute-mikoff.fr</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<hr>
-
-	<div class="image-deco"></div>
 	<div class="list container">
 		{% if posts %}
 			{% for post in posts %}
@@ -79,6 +51,31 @@
 			Il n'y a actuellement aucun article
 		{% endif %}
 	</div>
+	<div class="image-deco"></div>
+
+	<section class="section-form ">
+		<h2 class="contact_title">Contact</h2>
+		<div class="form ">
+			{{form(form)}}
+				<div class="separator-form"></div>
+				<div class="rens">
+					<div class="infos">
+						<i class="fas fa-map-marker-alt"></i>
+						<p>108 blvrd Carnot 47000 Agen</p>
+					</div>
+					<div class="infos">
+						<i class="fas fa-phone-alt"></i>
+						<p>06 47 85 74 74</p>
+					</div>
+					<div class="infos">
+						<i class="fas fa-paper-plane"></i>
+						<p>contact@therapeute-mikoff.fr</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
 
 
 {% endblock %}
