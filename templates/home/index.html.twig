@@ -69,7 +69,7 @@
 								<p class="card-text p-2">{{post.content|striptags|slice(0, 200) ~ '...'}}<br><span class="text-muted">Publié le:
 										{{post.createdAt| date("d M Y H:i", "Europe/Paris")}}</span>
 								</p>
-								<a href="{{path('show_post',{'slug': post.slug})}}" class="btn btn-primary">Lire plus</a>
+								<a href="{{path('show_post',{'id': post.id})}}" class="btn btn-primary">Lire plus</a>
 							</div>
 						</div>
 					</div>

@@ -12,10 +12,10 @@
                 <h1>{{page.title}}</h1>
                 <p>{{page.content|raw}}</p>
             </div>
-            
-            <img src="{{asset('/upload/images/pages/' ~ page.image)}}" class="illustration" alt="">
-            
-            
+            {% if page.image is not null %}
+                <img src="{{asset('/upload/images/pages/' ~ page.image)}}" class="illustration" alt="">
+
+            {% endif %}
         </div>
         <hr>
             

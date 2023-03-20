@@ -86,6 +86,7 @@ class HomeController extends AbstractController
     public function displayPost(Article $post, ArticleRepository $articleRepo)
     {   
         
+        
         return $this->render('home/show.html.twig', [
             'article' => $post,
         ]);
